@@ -35,7 +35,7 @@ public class Decryption {
     }
 
     public static String decryption(String plainText, int shiftKey){
-        String textToUpperCase = plainText.toUpperCase();
+        String textToUpperCase = plainText.toUpperCase().trim();
         String cipherText = "";
         for(int i = 0; i < textToUpperCase.length(); i++){
             if (textToUpperCase.charAt(i) == ' ') {
