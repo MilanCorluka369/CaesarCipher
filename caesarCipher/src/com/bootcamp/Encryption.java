@@ -40,6 +40,10 @@ public class Encryption {
         String textToUpperCase = plainText.toUpperCase();
         String cipherText = "";
         for(int i = 0; i < textToUpperCase.length(); i++){
+            if (textToUpperCase.charAt(i) == ' ') {
+                cipherText += " ";
+                continue;
+            }
             int plainIndex = alphabet.indexOf(textToUpperCase.charAt(i));
             int cipherIndex = (plainIndex - shiftKey) % 26;
             if (cipherIndex < 0)
