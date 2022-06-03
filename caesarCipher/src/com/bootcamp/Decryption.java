@@ -43,6 +43,9 @@ public class Decryption {
             if (textToUpperCase.charAt(i) == ' ') {
                 cipherText += " ";
                 continue;
+            } else if (!textToUpperCase.matches("[a-zA-Z\\s']+")){
+                System.err.println("Text doesn't contain just letters, try again!");
+                break;
             }
             int plainIndex = alphabet.indexOf(textToUpperCase.charAt(i));
             int cipherIndex = (plainIndex + shiftKey) % 26;
