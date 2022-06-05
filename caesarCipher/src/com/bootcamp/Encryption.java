@@ -20,7 +20,7 @@ public class Encryption {
             System.out.print("\nDo you want to continue? (y/n): ");
             answer = input.nextLine();
 
-            if(answer.equalsIgnoreCase("y"))
+            if (answer.equalsIgnoreCase("y"))
                 continue;
             else if (answer.equalsIgnoreCase("n"))
                 break;
@@ -46,9 +46,7 @@ public class Encryption {
                 break;
             }
             int plainIndex = alphabet.indexOf(textToUpperCase.charAt(i));
-            int cipherIndex = (plainIndex - shiftKey) % 26;
-            if (cipherIndex < 0)
-                cipherIndex = alphabet.length() + cipherIndex;
+            int cipherIndex = (plainIndex + shiftKey) % 26;
             char charOfCipherIndex = alphabet.charAt(cipherIndex) ;
             cipherText += charOfCipherIndex;
         }
