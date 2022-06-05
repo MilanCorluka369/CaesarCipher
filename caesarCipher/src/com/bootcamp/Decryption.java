@@ -12,9 +12,14 @@ public class Decryption {
         while (true){
             System.out.print("Enter text for Decryption: ");
             plainText = input.nextLine();
-            System.out.print("Enter whole number for Shift Key: ");
-            shiftKey = input.nextInt();
-            input.nextLine();
+            try {
+                System.out.print("Enter whole number for Shift Key: ");
+                shiftKey = input.nextInt();
+                input.nextLine();
+            } catch (Exception ex) {
+                System.err.print("Enter only whole number, try again!");
+                break;
+            }
 
             System.out.println("\nDecrypted text: " + decryption(plainText, shiftKey));
             System.out.print("\nDo you want to continue? (y/n): ");
